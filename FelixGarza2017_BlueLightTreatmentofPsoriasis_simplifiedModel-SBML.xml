@@ -1,0 +1,3085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by COPASI version 4.15 (Build 95) on 2016-12-13 14:42 with libSBML version 5.11.1. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:layout="http://www.sbml.org/sbml/level3/version1/layout/version1" xmlns:render="http://www.sbml.org/sbml/level3/version1/render/version1" level="3" version="1" layout:required="false" render:required="false">
+  <model metaid="COPASI0" id="BLISS_simplified" name="FelixGarza2017_BlueLightTreatmentofPsoriasis_simplified" substanceUnits="substance" timeUnits="time" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="substance">
+    <annotation>
+      <COPASI xmlns="http://www.copasi.org/static/sbml">
+        <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+          <rdf:Description rdf:about="#COPASI0">
+            <dcterms:created>
+              <rdf:Description>
+                <dcterms:W3CDTF>2016-12-13T14:38:47Z</dcterms:W3CDTF>
+              </rdf:Description>
+            </dcterms:created>
+          </rdf:Description>
+        </rdf:RDF>
+      </COPASI>
+    </annotation>
+    <listOfFunctionDefinitions>
+      <functionDefinition metaid="COPASI104" id="Function_for_R_3" name="Function for R_3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k3 </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTr </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k3 </ci>
+                <ci> rhoTr </ci>
+                <ci> xFinal_9 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI105" id="Function_for_R_1" name="Function for R_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k4 </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTr </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_10 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k4 </ci>
+                <ci> rhoTr </ci>
+                <ci> xFinal_10 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI106" id="Function_for_R_2" name="Function for R_2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> alpha </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoDe </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_12 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> alpha </ci>
+                  <ci> rhoDe </ci>
+                  <ci> xFinal_12 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_12 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI107" id="Function_for_R_4" name="Function for R_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AId </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k4 </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTr </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_10 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> AId </ci>
+                  <ci> k4 </ci>
+                  <ci> xFinal_10 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> rhoTr </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AId </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_10 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI108" id="Function_for_R_5" name="Function for R_5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k2s </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTA </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k2s </ci>
+                <ci> rhoTA </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI109" id="Function_for_R_6" name="Function for R_6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k2a </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTA </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k2a </ci>
+                <ci> rhoTA </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI110" id="Function_for_R_7" name="Function for R_7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AId </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k3 </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTr </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> AId </ci>
+                  <ci> k3 </ci>
+                  <ci> xFinal_9 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> rhoTr </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AId </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_9 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI111" id="Function_for_R_8" name="Function for R_8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> km2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_9 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> km2 </ci>
+                <ci> xFinal_9 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI112" id="Function_for_R_9" name="Function for R_9">
+        <annotation>
+          <COPASI xmlns="http://www.copasi.org/static/sbml">
+            <rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about="#COPASI112">
+                <dcterms:created>
+                  <rdf:Description>
+                    <dcterms:W3CDTF>2016-12-13T11:57:38Z</dcterms:W3CDTF>
+                  </rdf:Description>
+                </dcterms:created>
+              </rdf:Description>
+            </rdf:RDF>
+          </COPASI>
+        </annotation>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k1sh </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoSC </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k1sh </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI113" id="Function_for_R_10" name="Function for R_10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k1ah </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoSC </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k1ah </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI114" id="Function_for_R_11" name="Function for R_11">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma2 </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTA </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> aProl </ci>
+                <ci> aProl </ci>
+                <ci> gamma2 </ci>
+                <ci> rhoTA </ci>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <ci> bProl </ci>
+                    <ci> doseBL </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <ci> bProl </ci>
+                    <ci> doseBL </ci>
+                  </apply>
+                </apply>
+                <ci> xFinal_8 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI115" id="Function_for_R_12" name="Function for R_12">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AId </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k2s </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoTA </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> AId </ci>
+                  <ci> k2s </ci>
+                  <ci> xFinal_8 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> rhoTA </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AId </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_8 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI116" id="Function_for_R_13" name="Function for R_13">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> km1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> km1 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI117" id="Function_for_R_14" name="Function for R_14">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma1h </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoSC </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> aProl </ci>
+                <ci> gamma1h </ci>
+                <ci> rhoSC </ci>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <ci> bProl </ci>
+                    <ci> doseBL </ci>
+                  </apply>
+                </apply>
+                <ci> xFinal_7 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI118" id="Function_for_R_15" name="Function for R_15">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Pscmax </ci>
+            </bvar>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma1h </ci>
+            </bvar>
+            <bvar>
+              <ci> lambda </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoSC </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_6 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> aProl </ci>
+                <ci> gamma1h </ci>
+                <ci> rhoSC </ci>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <ci> bProl </ci>
+                    <ci> doseBL </ci>
+                  </apply>
+                </apply>
+                <ci> xFinal_7 </ci>
+                <apply>
+                  <divide/>
+                  <ci> xFinal_6 </ci>
+                  <apply>
+                    <times/>
+                    <ci> lambda </ci>
+                    <ci> Pscmax </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI119" id="Function_for_R_16" name="Function for R_16">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AId </ci>
+            </bvar>
+            <bvar>
+              <ci> Ka </ci>
+            </bvar>
+            <bvar>
+              <ci> Kp </ci>
+            </bvar>
+            <bvar>
+              <ci> Pscmax </ci>
+            </bvar>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma1h </ci>
+            </bvar>
+            <bvar>
+              <ci> k1sh </ci>
+            </bvar>
+            <bvar>
+              <ci> lambda </ci>
+            </bvar>
+            <bvar>
+              <ci> rhoSC </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_7 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> aProl </ci>
+                  <ci> gamma1h </ci>
+                  <ci> rhoSC </ci>
+                  <apply>
+                    <exp/>
+                    <apply>
+                      <times/>
+                      <ci> bProl </ci>
+                      <ci> doseBL </ci>
+                    </apply>
+                  </apply>
+                  <ci> xFinal_7 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> xFinal_7 </ci>
+                    <apply>
+                      <times/>
+                      <ci> lambda </ci>
+                      <ci> Pscmax </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> AId </ci>
+                  <ci> k1sh </ci>
+                  <ci> xFinal_7 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> rhoSC </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AId </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> Kp </ci>
+                  <apply>
+                    <divide/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <ci> Ka </ci>
+                        <cn> 2 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> xFinal_7 </ci>
+                        <cn> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> xFinal_7 </ci>
+                    <cn> 2 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI120" id="Function_for_R_17" name="Function for R_17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k5 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_5 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k5 </ci>
+                <ci> xFinal_5 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI121" id="Function_for_R_18" name="Function for R_18">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> alpha </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_6 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> alpha </ci>
+                  <ci> xFinal_6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_6 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI122" id="Function_for_R_19" name="Function for R_19">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k4 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k4 </ci>
+                <ci> xFinal_4 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI123" id="Function_for_R_20" name="Function for R_20">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AIh </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k5 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_5 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k5 </ci>
+                  <ci> xFinal_5 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> AIh </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AIh </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_5 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI124" id="Function_for_R_21" name="Function for R_21">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k3 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k3 </ci>
+                <ci> xFinal_3 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI125" id="Function_for_R_22" name="Function for R_22">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AIh </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k4 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_4 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k4 </ci>
+                  <ci> xFinal_4 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> AIh </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AIh </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_4 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI126" id="Function_for_R_23" name="Function for R_23">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k2s </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k2s </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI127" id="Function_for_R_24" name="Function for R_24">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k2a </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k2a </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI128" id="Function_for_R_25" name="Function for R_25">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AIh </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k3 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k3 </ci>
+                  <ci> xFinal_3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> AIh </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AIh </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_3 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI129" id="Function_for_R_26" name="Function for R_26">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> km2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_3 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> km2 </ci>
+                <ci> xFinal_3 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI130" id="Function_for_R_27" name="Function for R_27">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Ptah </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k1sh </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> omega </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> k1sh </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> omega </ci>
+                        <cn> 1 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <plus/>
+                            <ci> xFinal_2 </ci>
+                            <ci> xFinal_8 </ci>
+                          </apply>
+                          <ci> Ptah </ci>
+                        </apply>
+                        <ci> n </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI131" id="Function_for_R_28" name="Function for R_28">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Ptah </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k1ah </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> omega </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> k1ah </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> omega </ci>
+                        <cn> 1 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <plus/>
+                            <ci> xFinal_2 </ci>
+                            <ci> xFinal_8 </ci>
+                          </apply>
+                          <ci> Ptah </ci>
+                        </apply>
+                        <ci> n </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI132" id="Function_for_R_29" name="Function for R_29">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> aProl </ci>
+                <ci> gamma2 </ci>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <ci> bProl </ci>
+                    <ci> doseBL </ci>
+                  </apply>
+                </apply>
+                <ci> xFinal_2 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI133" id="Function_for_R_30" name="Function for R_30">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AIh </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k2s </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k2s </ci>
+                  <ci> xFinal_2 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> AIh </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AIh </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_2 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI134" id="Function_for_R_31" name="Function for R_31">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> km1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> km1 </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI135" id="Function_for_R_32" name="Function for R_32">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Ptah </ci>
+            </bvar>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma1h </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> omega </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> aProl </ci>
+                <ci> gamma1h </ci>
+                <apply>
+                  <exp/>
+                  <apply>
+                    <times/>
+                    <ci> bProl </ci>
+                    <ci> doseBL </ci>
+                  </apply>
+                </apply>
+                <ci> xFinal_1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> omega </ci>
+                  <apply>
+                    <plus/>
+                    <cn> 1 </cn>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <minus/>
+                        <ci> omega </ci>
+                        <cn> 1 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <plus/>
+                            <ci> xFinal_2 </ci>
+                            <ci> xFinal_8 </ci>
+                          </apply>
+                          <ci> Ptah </ci>
+                        </apply>
+                        <ci> n </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI136" id="Function_for_R_33" name="Function for R_33">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Pscmax </ci>
+            </bvar>
+            <bvar>
+              <ci> Ptah </ci>
+            </bvar>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma1h </ci>
+            </bvar>
+            <bvar>
+              <ci> k1sh </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> omega </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> gamma1h </ci>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> aProl </ci>
+                        <apply>
+                          <exp/>
+                          <apply>
+                            <times/>
+                            <ci> bProl </ci>
+                            <ci> doseBL </ci>
+                          </apply>
+                        </apply>
+                        <ci> xFinal_1 </ci>
+                        <ci> omega </ci>
+                        <ci> xFinal_1 </ci>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <cn> 1 </cn>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> omega </ci>
+                            <cn> 1 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <plus/>
+                                <ci> xFinal_2 </ci>
+                                <ci> xFinal_8 </ci>
+                              </apply>
+                              <ci> Ptah </ci>
+                            </apply>
+                            <ci> n </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> Pscmax </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k1sh </ci>
+                  <ci> xFinal_1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> omega </ci>
+                    <apply>
+                      <plus/>
+                      <cn> 1 </cn>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> omega </ci>
+                          <cn> 1 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <plus/>
+                              <ci> xFinal_2 </ci>
+                              <ci> xFinal_8 </ci>
+                            </apply>
+                            <ci> Ptah </ci>
+                          </apply>
+                          <ci> n </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI137" id="Function_for_R_34" name="Function for R_34">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> Pscmax </ci>
+            </bvar>
+            <bvar>
+              <ci> Ptah </ci>
+            </bvar>
+            <bvar>
+              <ci> aProl </ci>
+            </bvar>
+            <bvar>
+              <ci> bProl </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> doseBL </ci>
+            </bvar>
+            <bvar>
+              <ci> gamma1h </ci>
+            </bvar>
+            <bvar>
+              <ci> lambda </ci>
+            </bvar>
+            <bvar>
+              <ci> n </ci>
+            </bvar>
+            <bvar>
+              <ci> omega </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_1 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_2 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_7 </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_8 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> gamma1h </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> aProl </ci>
+                        <apply>
+                          <exp/>
+                          <apply>
+                            <times/>
+                            <ci> bProl </ci>
+                            <ci> doseBL </ci>
+                          </apply>
+                        </apply>
+                        <ci> xFinal_1 </ci>
+                        <ci> omega </ci>
+                        <ci> xFinal_7 </ci>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <cn> 1 </cn>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> omega </ci>
+                            <cn> 1 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <plus/>
+                                <ci> xFinal_2 </ci>
+                                <ci> xFinal_8 </ci>
+                              </apply>
+                              <ci> Ptah </ci>
+                            </apply>
+                            <ci> n </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <ci> lambda </ci>
+                  </apply>
+                  <ci> Pscmax </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition metaid="COPASI138" id="Function_for_R_35" name="Function for R_35">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AIh </ci>
+            </bvar>
+            <bvar>
+              <ci> apopFBL </ci>
+            </bvar>
+            <bvar>
+              <ci> compartmentOne </ci>
+            </bvar>
+            <bvar>
+              <ci> k1sh </ci>
+            </bvar>
+            <bvar>
+              <ci> xFinal_1 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k1sh </ci>
+                  <ci> xFinal_1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> AIh </ci>
+                    <apply>
+                      <minus/>
+                      <cn> 1 </cn>
+                      <ci> AIh </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> apopFBL </ci>
+                  <ci> xFinal_1 </ci>
+                </apply>
+              </apply>
+              <ci> compartmentOne </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="length" name="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area" name="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume" name="volume">
+        <listOfUnits>
+          <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="86400"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit kind="dimensionless" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="COPASI1" id="compartmentOne" name="compartmentOne" spatialDimensions="3" size="1" units="litre" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="COPASI2" id="xFinal_1" name="xFinal_1" compartment="compartmentOne" initialConcentration="362" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI3" id="xFinal_2" name="xFinal_2" compartment="compartmentOne" initialConcentration="77" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI4" id="xFinal_3" name="xFinal_3" compartment="compartmentOne" initialConcentration="61" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI5" id="xFinal_4" name="xFinal_4" compartment="compartmentOne" initialConcentration="238" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI6" id="xFinal_5" name="xFinal_5" compartment="compartmentOne" initialConcentration="119" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI7" id="xFinal_6" name="xFinal_6" compartment="compartmentOne" initialConcentration="185" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI8" id="xFinal_7" name="xFinal_7" compartment="compartmentOne" initialConcentration="6459" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI9" id="xFinal_8" name="xFinal_8" compartment="compartmentOne" initialConcentration="32098" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI10" id="xFinal_9" name="xFinal_9" compartment="compartmentOne" initialConcentration="20536" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI11" id="xFinal_10" name="xFinal_10" compartment="compartmentOne" initialConcentration="79788" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI12" id="xFinal_11" name="xFinal_11" compartment="compartmentOne" initialConcentration="0" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="COPASI13" id="xFinal_12" name="xFinal_12" compartment="compartmentOne" initialConcentration="77633" substanceUnits="mole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="COPASI14" id="AId" name="AId" value="0.00035" constant="true"/>
+      <parameter metaid="COPASI15" id="AIh" name="AIh" value="0.0012" constant="true"/>
+      <parameter metaid="COPASI16" id="alpha" name="alpha" value="0.0714" constant="true"/>
+      <parameter metaid="COPASI17" id="alphaps" name="alphaps" value="0.2856" constant="true"/>
+      <parameter metaid="COPASI18" id="apopFBL" name="apopFBL" value="0" constant="true"/>
+      <parameter metaid="COPASI19" id="aProl" name="aProl" value="1" constant="true"/>
+      <parameter metaid="COPASI20" id="beta1" name="beta1" value="1.97036443732479e-006" constant="true"/>
+      <parameter metaid="COPASI21" id="beta1h" name="beta1h" value="1.97036443732479e-006" constant="true"/>
+      <parameter metaid="COPASI22" id="beta2" name="beta2" value="2.07849419303164e-005" constant="true"/>
+      <parameter metaid="COPASI23" id="beta3" name="beta3" value="0.000259511413696436" constant="true"/>
+      <parameter metaid="COPASI24" id="beta4" name="beta4" value="6.68001601922307e-005" constant="true"/>
+      <parameter metaid="COPASI25" id="beta5" name="beta5" value="0.000133360032038446" constant="true"/>
+      <parameter metaid="COPASI26" id="betaps1" name="betaps1" value="2.29680388135848e-006" constant="true"/>
+      <parameter metaid="COPASI27" id="betaps2" name="betaps2" value="2.42284799679888e-005" constant="true"/>
+      <parameter metaid="COPASI28" id="betaps3" name="betaps3" value="0.000378132346321212" constant="true"/>
+      <parameter metaid="COPASI29" id="betaps4" name="betaps4" value="9.73340669234232e-005" constant="true"/>
+      <parameter metaid="COPASI30" id="bProl" name="bProl" value="-0.003404" constant="true"/>
+      <parameter metaid="COPASI31" id="doseBL" name="doseBL" value="52.11" constant="true"/>
+      <parameter metaid="COPASI32" id="gamma1h" name="gamma1h" value="0.0033" constant="true"/>
+      <parameter metaid="COPASI33" id="gamma1ps" name="gamma1ps" value="0.0132" constant="true"/>
+      <parameter metaid="COPASI34" id="gamma2" name="gamma2" value="0.014" constant="true"/>
+      <parameter metaid="COPASI35" id="gamma2ps" name="gamma2ps" value="0.046897728935757" constant="true"/>
+      <parameter metaid="COPASI36" id="k1ah" name="k1ah" value="0.0131" constant="true"/>
+      <parameter metaid="COPASI37" id="k1sh" name="k1sh" value="0.00164" constant="true"/>
+      <parameter metaid="COPASI38" id="k2a" name="k2a" value="0.138" constant="true"/>
+      <parameter metaid="COPASI39" id="k2s" name="k2s" value="0.0173" constant="true"/>
+      <parameter metaid="COPASI40" id="k3" name="k3" value="0.216" constant="true"/>
+      <parameter metaid="COPASI41" id="k4" name="k4" value="0.0556" constant="true"/>
+      <parameter metaid="COPASI42" id="k5" name="k5" value="0.111" constant="true"/>
+      <parameter metaid="COPASI43" id="Ka" name="Ka" value="392.772887665773" constant="false"/>
+      <parameter metaid="COPASI44" id="km1" name="km1" value="1e-006" constant="true"/>
+      <parameter metaid="COPASI45" id="km2" name="km2" value="1e-006" constant="true"/>
+      <parameter metaid="COPASI46" id="kmps1" name="kmps1" value="1e-006" constant="true"/>
+      <parameter metaid="COPASI47" id="kmps2" name="kmps2" value="1e-006" constant="true"/>
+      <parameter metaid="COPASI48" id="Kp" name="Kp" value="6" constant="true"/>
+      <parameter metaid="COPASI49" id="kps1a" name="kps1a" value="0.0524" constant="true"/>
+      <parameter metaid="COPASI50" id="kps1s" name="kps1s" value="0.00656" constant="true"/>
+      <parameter metaid="COPASI51" id="kps2a" name="kps2a" value="0.552" constant="true"/>
+      <parameter metaid="COPASI52" id="kps2s" name="kps2s" value="0.0692" constant="true"/>
+      <parameter metaid="COPASI53" id="kps3" name="kps3" value="1.08" constant="true"/>
+      <parameter metaid="COPASI54" id="kps4" name="kps4" value="0.278" constant="true"/>
+      <parameter metaid="COPASI55" id="lambda" name="lambda" value="3.5" constant="true"/>
+      <parameter metaid="COPASI56" id="LPSI0" name="LPSI0" value="5.34" constant="true"/>
+      <parameter metaid="COPASI57" id="n" name="n" value="3" constant="true"/>
+      <parameter metaid="COPASI58" id="omega" name="omega" value="100" constant="true"/>
+      <parameter metaid="COPASI59" id="Psch" name="Psch" value="2267.67532424221" constant="true"/>
+      <parameter metaid="COPASI60" id="Pscmax" name="Pscmax" value="4500" constant="true"/>
+      <parameter metaid="COPASI61" id="Ptah" name="Ptah" value="11184.7844353585" constant="true"/>
+      <parameter metaid="COPASI62" id="rhoDe" name="rhoDe" value="4" constant="true"/>
+      <parameter metaid="COPASI63" id="rhoSC" name="rhoSC" value="4" constant="true"/>
+      <parameter metaid="COPASI64" id="rhoTA" name="rhoTA" value="4" constant="true"/>
+      <parameter metaid="COPASI65" id="rhoTr" name="rhoTr" value="5" constant="true"/>
+      <parameter metaid="COPASI66" id="skinType" name="skinType" value="0.579" constant="true"/>
+      <parameter metaid="COPASI67" id="therI" name="therI" value="84" constant="true"/>
+      <parameter metaid="COPASI68" id="thetaBLprol" name="thetaBLprol" value="0.837459445281375" constant="true"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="alphaps">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoDe </ci>
+            <ci> alpha </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="beta1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AIh </ci>
+              <ci> k1sh </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AIh </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="beta1h">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AIh </ci>
+              <ci> k1sh </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AIh </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="beta2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AIh </ci>
+              <ci> k2s </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AIh </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="beta3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AIh </ci>
+              <ci> k3 </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AIh </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="beta4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AIh </ci>
+              <ci> k4 </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AIh </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="beta5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AIh </ci>
+              <ci> k5 </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AIh </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="betaps1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AId </ci>
+              <ci> k1sh </ci>
+              <ci> rhoSC </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AId </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="betaps2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AId </ci>
+              <ci> kps2s </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AId </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="betaps3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AId </ci>
+              <ci> kps3 </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AId </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="betaps4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> AId </ci>
+              <ci> kps4 </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <ci> AId </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="doseBL">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn type="integer"> 90 </cn>
+            <ci> skinType </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="gamma1ps">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoSC </ci>
+            <ci> gamma1h </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="gamma2ps">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoTA </ci>
+            <ci> gamma2 </ci>
+            <ci> thetaBLprol </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kmps1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> km1 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kmps2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> km2 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kps1a">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoSC </ci>
+            <ci> k1ah </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kps1s">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoSC </ci>
+            <ci> k1sh </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kps2a">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoTA </ci>
+            <ci> k2a </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kps2s">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoTA </ci>
+            <ci> k2s </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kps3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoTr </ci>
+            <ci> k3 </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="kps4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> rhoTr </ci>
+            <ci> k4 </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Psch">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> Pscmax </ci>
+            <apply>
+              <minus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> gamma1h </ci>
+                </apply>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <ci> k1sh </ci>
+                    <ci> beta1h </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> km1 </ci>
+                      <apply>
+                        <plus/>
+                        <ci> k1ah </ci>
+                        <apply>
+                          <times/>
+                          <ci> k1sh </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <plus/>
+                          <ci> km1 </ci>
+                          <ci> k2s </ci>
+                          <ci> beta2 </ci>
+                        </apply>
+                        <ci> gamma2 </ci>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> km2 </ci>
+                          <apply>
+                            <plus/>
+                            <ci> k2a </ci>
+                            <apply>
+                              <times/>
+                              <cn type="integer"> 2 </cn>
+                              <ci> k2s </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> km2 </ci>
+                          <ci> k3 </ci>
+                          <ci> beta3 </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Ptah">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> k1ah </ci>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> k1sh </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <plus/>
+                    <ci> km1 </ci>
+                    <ci> k2s </ci>
+                    <ci> beta2 </ci>
+                  </apply>
+                  <ci> gamma2 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> km2 </ci>
+                    <apply>
+                      <plus/>
+                      <ci> k2a </ci>
+                      <apply>
+                        <times/>
+                        <cn type="integer"> 2 </cn>
+                        <ci> k2s </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> km2 </ci>
+                    <ci> k3 </ci>
+                    <ci> beta3 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> Psch </ci>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="thetaBLprol">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> aProl </ci>
+            <apply>
+              <exp/>
+              <apply>
+                <times/>
+                <ci> bProl </ci>
+                <ci> doseBL </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="Ka">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <cn> 3 </cn>
+                <apply>
+                  <divide/>
+                  <cn> 1 </cn>
+                  <cn> 2 </cn>
+                </apply>
+              </apply>
+              <ci> Psch </ci>
+            </apply>
+            <cn> 10 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction metaid="COPASI69" id="R_1" name="R_1" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_10" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_12" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_1 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k4 </ci>
+                <ci> rhoTr </ci>
+                <ci> xFinal_10 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI70" id="R_2" name="R_2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_12" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_2 </ci>
+                <ci> alpha </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> rhoDe </ci>
+                <ci> xFinal_12 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI71" id="R_3" name="R_3" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_9" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_10" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_3 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k3 </ci>
+                <ci> rhoTr </ci>
+                <ci> xFinal_9 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI72" id="R_4" name="R_4" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_10" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_4 </ci>
+                <ci> AId </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k4 </ci>
+                <ci> rhoTr </ci>
+                <ci> xFinal_10 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI73" id="R_5" name="R_5" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_9" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_5 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k2s </ci>
+                <ci> rhoTA </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI74" id="R_6" name="R_6" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_9" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_6 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k2a </ci>
+                <ci> rhoTA </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI75" id="R_7" name="R_7" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_9" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_7 </ci>
+                <ci> AId </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k3 </ci>
+                <ci> rhoTr </ci>
+                <ci> xFinal_9 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI76" id="R_8" name="R_8" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_9" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_8 </ci>
+                <ci> compartmentOne </ci>
+                <ci> km2 </ci>
+                <ci> xFinal_9 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI77" id="R_9" name="R_9" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_8" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_9 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k1sh </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI78" id="R_10" name="R_10" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_10 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k1ah </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI79" id="R_11" name="R_11" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_8" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_11 </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma2 </ci>
+                <ci> rhoTA </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI80" id="R_12" name="R_12" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_12 </ci>
+                <ci> AId </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k2s </ci>
+                <ci> rhoTA </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI81" id="R_13" name="R_13" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_13 </ci>
+                <ci> compartmentOne </ci>
+                <ci> km1 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI82" id="R_14" name="R_14" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_7" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_14 </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma1h </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI83" id="R_15" name="R_15" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_6" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_6" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_15 </ci>
+                <ci> Pscmax </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma1h </ci>
+                <ci> lambda </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_6 </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI84" id="R_16" name="R_16" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_16 </ci>
+                <ci> AId </ci>
+                <ci> Ka </ci>
+                <ci> Kp </ci>
+                <ci> Pscmax </ci>
+                <ci> aProl </ci>
+                <ci> apopFBL </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma1h </ci>
+                <ci> k1sh </ci>
+                <ci> lambda </ci>
+                <ci> rhoSC </ci>
+                <ci> xFinal_7 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI85" id="R_17" name="R_17" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_5" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_6" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_17 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k5 </ci>
+                <ci> xFinal_5 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI86" id="R_18" name="R_18" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_6" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_18 </ci>
+                <ci> alpha </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> xFinal_6 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI87" id="R_19" name="R_19" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_4" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_5" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_19 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k4 </ci>
+                <ci> xFinal_4 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI88" id="R_20" name="R_20" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_5" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_20 </ci>
+                <ci> AIh </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k5 </ci>
+                <ci> xFinal_5 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI89" id="R_21" name="R_21" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_3" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_4" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_21 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k3 </ci>
+                <ci> xFinal_3 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI90" id="R_22" name="R_22" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_4" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_22 </ci>
+                <ci> AIh </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k4 </ci>
+                <ci> xFinal_4 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI91" id="R_23" name="R_23" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_3" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_23 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k2s </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI92" id="R_24" name="R_24" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_3" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_24 </ci>
+                <ci> compartmentOne </ci>
+                <ci> k2a </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI93" id="R_25" name="R_25" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_3" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_25 </ci>
+                <ci> AIh </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k3 </ci>
+                <ci> xFinal_3 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI94" id="R_26" name="R_26" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_3" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_26 </ci>
+                <ci> compartmentOne </ci>
+                <ci> km2 </ci>
+                <ci> xFinal_3 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI95" id="R_27" name="R_27" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="3" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_27 </ci>
+                <ci> Ptah </ci>
+                <ci> compartmentOne </ci>
+                <ci> k1sh </ci>
+                <ci> n </ci>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <ci> xFinal_2 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI96" id="R_28" name="R_28" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="2" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_28 </ci>
+                <ci> Ptah </ci>
+                <ci> compartmentOne </ci>
+                <ci> k1ah </ci>
+                <ci> n </ci>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <ci> xFinal_2 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI97" id="R_29" name="R_29" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_2" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_29 </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma2 </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI98" id="R_30" name="R_30" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_30 </ci>
+                <ci> AIh </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k2s </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI99" id="R_31" name="R_31" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_31 </ci>
+                <ci> compartmentOne </ci>
+                <ci> km1 </ci>
+                <ci> xFinal_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI100" id="R_32" name="R_32" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_1" stoichiometry="2" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_32 </ci>
+                <ci> Ptah </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma1h </ci>
+                <ci> n </ci>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <ci> xFinal_2 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI101" id="R_33" name="R_33" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_33 </ci>
+                <ci> Pscmax </ci>
+                <ci> Ptah </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma1h </ci>
+                <ci> k1sh </ci>
+                <ci> n </ci>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <ci> xFinal_2 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI102" id="R_34" name="R_34" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="xFinal_2" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_7" stoichiometry="1" constant="true"/>
+          <speciesReference species="xFinal_8" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_34 </ci>
+                <ci> Pscmax </ci>
+                <ci> Ptah </ci>
+                <ci> aProl </ci>
+                <ci> bProl </ci>
+                <ci> compartmentOne </ci>
+                <ci> doseBL </ci>
+                <ci> gamma1h </ci>
+                <ci> lambda </ci>
+                <ci> n </ci>
+                <ci> omega </ci>
+                <ci> xFinal_1 </ci>
+                <ci> xFinal_2 </ci>
+                <ci> xFinal_7 </ci>
+                <ci> xFinal_8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="COPASI103" id="R_35" name="R_35" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="xFinal_1" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartmentOne </ci>
+              <apply>
+                <ci> Function_for_R_35 </ci>
+                <ci> AIh </ci>
+                <ci> apopFBL </ci>
+                <ci> compartmentOne </ci>
+                <ci> k1sh </ci>
+                <ci> xFinal_1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
